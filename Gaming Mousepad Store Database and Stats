@@ -1,0 +1,45 @@
+--Create a gaming mousepad store database
+
+CREATE TABLE gaming_mousepads (
+id INTEGER PRIMARY KEY,
+name TEXT,
+speed TEXT,
+durability TEXT,
+origin TEXT,
+size TEXT,
+cost INTEGER);
+
+INSERT INTO gaming_mousepads VALUES
+(1, "LGG Saturn Pro", "Medium", "Long", "China", "XXL", 100),
+(2, "Aqua Control Plus", "Medium", "Long", "China", "XXL", 60),
+(3, "Artisan Hien", "Quick", "Very Long", "Japan", "L", 70),
+(4, "Mousepad Company", "Quick", "Long", "United States", "XXL", 50),
+(5, "Steelseries QcK", "Control", "Short", "China", "XXL", 50),
+(6, "Glorius", "Extreme Control", "Medium", "China", "XXL", 40),
+(7, "Corsair MM350 Pro", "Medium", "Medium", "China", "XXL", 50),
+(8, "Cooler Master Cordura", "Medium", "Long", "China", "XXL", 45),
+(9, "Artisan Hayate Otsu", "Medium", "Long", "Japan", "L", 60),
+(10, "Artisan Zero", "Medium", "Very Long", "Japan", "L", 50),
+(11, "Aqua Control 2", "Medium", "Long", "China", "XXL", 60),
+(12, "Aqua Control Zero", "Control", "Long", "China", "XXL", 60),
+(13, "LGG Venus", "Quick", "Long", "China", "L", 50),
+(14, "Zowie GSR", "Extreme Control", "Short", "China", "L", 40),
+(15, "Skyglass 2.0", "Very Fast", "Very Long", "China", "L", 80);
+
+--Display the database ordered by ascending cost
+
+SELECT *
+FROM gaming_mousepads
+ORDER BY cost ASC;
+
+--What is the average, minimum, and maximum cost of a mousepad within the store?
+
+SELECT AVG(cost), MIN(cost), MAX(cost)
+FROM gaming_mousepads;
+
+--Which mousepads are the least and most expensive within the store?
+
+SELECT *
+FROM gaming_mousepads
+WHERE (cost = 40 OR cost = 100)
+ORDER BY cost ASC;
